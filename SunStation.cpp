@@ -25,20 +25,19 @@
 #include "Adafruit_NeoPixel.h"
 #include "ArduinoJson.h"
 
-const byte virtualRxPin = 4;  //!< Pin on which to receive serial data.
-const byte virtualTxPin = 5;  //!< Pin on which to transmit serial data.
-const byte bleVccPin = A2;    //!< Pin used to power the SunStation's Bluetooth module.
-const byte batteryPin = A0;   //!< Pin used read analog values from the SunStation's battery.
-const byte lightsDataPin = 3; //!< Pin used to drive data into lights object.
-const byte lightsPmosPin = 2; //!< Pin used to toggle P-MOSFET used control SunStation's lights.
-const byte usbRelayPin = 7;   //!< Pin used to toggle relay that controls SunStation's USB port.
-const byte buttonPin = 6;     //!< Pin used to monitor SunStation's button state.
+const byte virtualRxPin = 4;      //!< Pin on which to receive serial data.
+const byte virtualTxPin = 5;      //!< Pin on which to transmit serial data.
+const byte bleVccPin = A2;        //!< Pin used to power the SunStation's Bluetooth module.
+const byte lightsDataPin = 3;     //!< Pin used to drive data into lights object.
+const byte lightsPmosPin = 2;     //!< Pin used to toggle P-MOSFET used control SunStation's lights.
+const byte usbRelayPin = 7;       //!< Pin used to toggle relay that controls SunStation's USB port.
+const byte buttonPin = 6;         //!< Pin used to monitor SunStation's button state.
+const byte currentSensorPin = A0; //!< Pin used to measure current of the SunStation's battery.
 
 const float SunStation::batteryIdleDraw = 0.005083;
 const float SunStation::batteryChargeRate = 0.10;
 const float SunStation::batteryDischargeRate = 0.12;
 const float SunStation::batteryMaxCapacity = 7330.0;
-const float SunStation::currentMeasurementError = 0.42;
 const float SunStation::currentMeasurementNoise = 0.20;
 
 /** 
@@ -167,9 +166,26 @@ float SunStation::getCarbonSaved() { return carbonSaved; }
 /** @return Amount of energy (Wh) produced by the SunStation in its lifetime. */
 unsigned long SunStation::getEnergyProduced() { return energyProduced; }
 
-/** Measures the amount of current (amps) being drawn/output by the SunStation's battery. */
+/**
+ * Measures the amount of current (amps) being drawn/output by the
+ * SunStation's battery. The equations used to compute the current
+ * based on readings from the current sensor can be found here:
+ * https://www.pololu.com/product/2452 
+ */
 void SunStation::measureBatteryCurrent()
 {
+  float sum, vOut, current;
+  // Smooth readings from current sensor
+  for (byte i = 0; i < 10; i++)
+  {
+    sum += analogRead(currentSensorPin);
+  }
+  vOut = sum / 10.0;
+  // Compute and round current
+  current = 36.7 * (vOut / 1023) - 18.3;
+  current = ((int)(current * 10.0 + 0.5) / 10.0);
+  // Retain only significant current values
+  batteryCurrent = abs(current) < currentMeasurementNoise ? 0.0 : current;
 }
 
 /** Updates the current accumulated by the SunStation's battery. */
