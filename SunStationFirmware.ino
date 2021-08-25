@@ -29,10 +29,6 @@ void loop()
   {
     toggleBle(60000);
     toggleLights(10000);
-    if (!station.isUsbOn())
-    {
-      station.turnUsbOn();
-    }
   }
 }
 
@@ -61,6 +57,10 @@ void toggleLights(unsigned int countDown)
 bool turnLightsOff(void *)
 {
   station.turnLightsOff();
+  if (!station.isUsbOn())
+  {
+    station.turnUsbOn();
+  }
   return false;
 }
 

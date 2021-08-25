@@ -41,13 +41,13 @@ const float SunStation::batteryMaxCapacity = 7330.0;
 const float SunStation::currentMeasurementNoise = 0.20;
 
 /** 
- * Creates a SoftwareSerial object used to communicate 
+ * SoftwareSerial object used to communicate 
  * with the SunStation's Bluetooth module.
  */
 SoftwareSerial BleSerial(virtualRxPin, virtualTxPin);
 
 /** 
- * Creates the Adafruit_NeoPixel object used 
+ * Adafruit_NeoPixel object used 
  * to control the SunStation's lights.
  */
 Adafruit_NeoPixel lights(15, lightsDataPin, NEO_GRB + NEO_KHZ800);
@@ -128,12 +128,12 @@ void SunStation::turnLightsOn()
   byte numRingBars = round(getBatteryLevel() * 0.11);
   for (byte i = 0; i < numRingBars; i++)
   {
-    lights.setPixelColor(i, lights.Color(255, 255, 155));
+    lights.setPixelColor(i, lights.Color(100, 100, 60));
   }
-  lights.setPixelColor(11, lights.Color(255, 255, 155));
-  lights.setPixelColor(12, lights.Color(255, 255, 155));
-  lights.setPixelColor(13, lights.Color(255, 255, 155));
-  lights.setPixelColor(14, lights.Color(255, 255, 155));
+  lights.setPixelColor(11, lights.Color(100, 100, 60));
+  lights.setPixelColor(12, lights.Color(100, 100, 60));
+  lights.setPixelColor(13, lights.Color(100, 100, 60));
+  lights.setPixelColor(14, lights.Color(100, 100, 60));
   lights.show();
 }
 
