@@ -30,7 +30,7 @@ const byte virtualTxPin = 5;      //!< Pin on which to transmit serial data.
 const byte bleVccPin = A2;        //!< Pin used to power the SunStation's Bluetooth module.
 const byte lightsDataPin = 3;     //!< Pin used to drive data into lights object.
 const byte lightsPmosPin = 2;     //!< Pin used to toggle P-MOSFET used control SunStation's lights.
-const byte usbRelayPin = 7;       //!< Pin used to toggle relay that controls SunStation's USB port.
+const byte usbRelayPin = 8;       //!< Pin used to toggle relay that controls SunStation's USB port.
 const byte buttonPin = 6;         //!< Pin used to monitor SunStation's button state.
 const byte currentSensorPin = A0; //!< Pin used to measure current of the SunStation's battery.
 
@@ -206,10 +206,29 @@ void SunStation::resetCumulativeCurrent()
 /** Computes the SunStation's battery levels (percentage and raw) in one call. */
 void SunStation::computeBatteryLevels()
 {
+  computeRawBatteryLevel();
+  computeBatteryLevel();
+  batteryLevel = rawBatteryLevel * 100 / batteryMaxCapacity;
+}
+
+void SunStation::computeRawBatteryLevel()
+{
   float rate = batteryCurrent > 0 ? batteryChargeRate : batteryDischargeRate;
   rawBatteryLevel += (batteryCurrent * rate - batteryIdleDraw);
   rawBatteryLevel = constrain(rawBatteryLevel, 0, batteryMaxCapacity);
-  batteryLevel = rawBatteryLevel * 100 / batteryMaxCapacity;
+}
+
+void SunStation::computeBatteryLevel()
+{
+  float trueBatteryLevel = rawBatteryLevel / batteryMaxCapacity * 100;
+  if (trueBatteryLevel < 20)
+  {
+    batteryLevel = 0;
+  }
+  else
+  {
+    batteryLevel = (byte)map(trueBatteryLevel, 20, 100, 0, 100);
+  }
 }
 
 /**

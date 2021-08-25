@@ -53,6 +53,9 @@ private:
   static const float batteryDischargeRate;    //!< battery's discharge rate (amps)
   static const float batteryMaxCapacity;      //!< battery's maximum usable capacity  (cummulative amps till full)
   static const float currentMeasurementNoise; //!< values in range -measurementNoise to +measurementNoise are unrealiable
+
+  void computeRawBatteryLevel();
+  void computeBatteryLevel();
 };
 
 #endif
