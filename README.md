@@ -7,7 +7,9 @@ This program depends on the following external libraries being present on your s
  - <a href="https://github.com/bblanchon/ArduinoJson"> ArduinoJson </a>
  - <a href="https://github.com/contrem/arduino-timer"> arduino-timer </a>
  
-Please make sure you have installed the latest versions before running this program.
+Please make sure you have installed their latest versions before running this program.
+
+Check the the SunStation and SunStation.cpp file references of the Doxgygen documentation for more information about this program and its interfaces.
 
 Written by Loïc Darboux with guidance from Chris Falconi and Ibrahim Hashim.
  
