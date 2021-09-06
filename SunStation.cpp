@@ -211,6 +211,7 @@ void SunStation::computeBatteryLevels()
   batteryLevel = rawBatteryLevel * 100 / batteryMaxCapacity;
 }
 
+/** Computes the SunStation battery raw battery level (0-maxCapacity). */
 void SunStation::computeRawBatteryLevel()
 {
   float rate = batteryCurrent > 0 ? batteryChargeRate : batteryDischargeRate;
@@ -218,9 +219,12 @@ void SunStation::computeRawBatteryLevel()
   rawBatteryLevel = constrain(rawBatteryLevel, 0, batteryMaxCapacity);
 }
 
+/** Computes the SunStation's battery level in percentage (0-100). */
 void SunStation::computeBatteryLevel()
 {
   float trueBatteryLevel = rawBatteryLevel / batteryMaxCapacity * 100;
+  // understate true battery level in order improve user experience
+  // (SunStation tends to shut down abruptly at low battery levels)
   if (trueBatteryLevel < 20)
   {
     batteryLevel = 0;
