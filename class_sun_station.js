@@ -1,0 +1,27 @@
+var class_sun_station =
+[
+    [ "begin", "class_sun_station.html#a11581ac6dec5a83c72822a021d4e95b0", null ],
+    [ "isButtonPressed", "class_sun_station.html#a5dc670e0d92a6f52fae9222a29e57b5a", null ],
+    [ "isUsbOn", "class_sun_station.html#afe53fa7690bdf6369e25139d37b30ea8", null ],
+    [ "turnUsbOn", "class_sun_station.html#a69c930cd522a35c89b9086c937b981ae", null ],
+    [ "turnUsbOff", "class_sun_station.html#aa06aab3546eb6dc7b3a3fcaec7b1d820", null ],
+    [ "turnBleOn", "class_sun_station.html#acf39da7ed06997ea3bb146ee26db17d9", null ],
+    [ "turnBleOff", "class_sun_station.html#a0302ca5bb8e900cdf4807f50a6eb8c86", null ],
+    [ "turnLightsOn", "class_sun_station.html#a88e8e47b45920ef680e26a61eecf5d35", null ],
+    [ "turnLightsOff", "class_sun_station.html#a67aad52c87f1f809ad14aef120e1095e", null ],
+    [ "getBatteryLevel", "class_sun_station.html#ab967131d2495d98ca7d6f08c6584c14c", null ],
+    [ "getRawBatteryLevel", "class_sun_station.html#a32c7210b13731e8887e3bd81a46bdbb8", null ],
+    [ "getBatteryCurrent", "class_sun_station.html#a3accc1a48b50720fca60435f8a3312eb", null ],
+    [ "getCumulativeCurrent", "class_sun_station.html#a82a5f4d0424c1c40f172857c4a709915", null ],
+    [ "getCarbonSaved", "class_sun_station.html#aabd38d610fda0f9d36ba00298d475f10", null ],
+    [ "getEnergyProduced", "class_sun_station.html#a9d9aff25f1db02f7eaff21544e7554a5", null ],
+    [ "measureBatteryCurrent", "class_sun_station.html#ad243dea0b94333bf99a0af1bfa5db849", null ],
+    [ "updateCumulativeCurrent", "class_sun_station.html#a596d6ff2fbc613f1583e3a7edf0548b1", null ],
+    [ "resetCumulativeCurrent", "class_sun_station.html#a4684a23d0347e862eb56f0ddc762a29c", null ],
+    [ "computeBatteryLevels", "class_sun_station.html#abd122892092c845e6054d0f2d38b9147", null ],
+    [ "computeCarbonSaved", "class_sun_station.html#add2c6baaf1ab25bea7f3422c13b63e82", null ],
+    [ "computeEnergyProduced", "class_sun_station.html#a45dd8915e6fe5a73a46cf2ce4e12017c", null ],
+    [ "saveEnergyProduced", "class_sun_station.html#a4733d11603439390512e3d0fab1cbdb2", null ],
+    [ "recoverEnergyProduced", "class_sun_station.html#a7d3120b3d6790e72657cec74c48ffe38", null ],
+    [ "sendBlePacket", "class_sun_station.html#aed61622311880b87bd1cb93f30696f2d", null ]
+];

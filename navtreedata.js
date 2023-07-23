@@ -24,12 +24,32 @@
 */
 var NAVTREE =
 [
-  [ "SunStation Firmware", "index.html", ]
+  [ "SunStation Firmware", "index.html", [
+    [ "Introduction", "index.html#intro_sec", null ],
+    [ "Dependencies", "index.html#dependencies", null ],
+    [ "Author", "index.html#author", null ],
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ]
+      ] ]
+    ] ],
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ]
+      ] ]
+    ] ]
+  ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"index.html"
+"_sun_station_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
