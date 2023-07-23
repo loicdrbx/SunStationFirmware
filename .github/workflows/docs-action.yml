@@ -1,0 +1,35 @@
+name: Deploy Docs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true 
+          fetch-depth: 0
+
+      - name: Generate documentation
+        uses: mattnotmitt/doxygen-action@1.9.5
+        with:
+          doxyfile-path: ./docs/Doxyfile
+
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3.9.2
+        with: 
+          github_token: ${{ secrets.MY_TOKEN }}
+          publish_dir: ./docs/html
+          publish_branch: gh-pages
+
+    
+
