@@ -1,21 +1,16 @@
 /**
  * @file SunStation.cpp
  *
- * @mainpage SunStation Firmware
- *
- * @section intro_sec Introduction
- *
- * This is the documentation for the SunStation solar phone charger. 
+ * @mainpage %SunStation Firmware
+ * 
+ * This webpage documents the firmware that controls the %SunStation solar-powered phone charger. 
  *  
- * @section dependencies Dependencies
- *
  * This program depends on the following external libraries being present on your system:
  *    \n<a href="https://github.com/adafruit/Adafruit_NeoPixel"> Adafruit_Neopixel </a>
  *    \n<a href="https://github.com/bblanchon/ArduinoJson"> ArduinoJson </a>
  *    \n<a href="https://github.com/contrem/arduino-timer"> arduino-timer </a>  \n 
  * Please make sure you have installed the latest versions before running this program.
  *
- * @section author Author
  *
  * Written by Loïc Darboux with guidance from Chris Falconi and Ibrahim Hashim.
  */
@@ -27,12 +22,12 @@
 
 const byte virtualRxPin = 4;      //!< Pin on which to receive serial data.
 const byte virtualTxPin = 5;      //!< Pin on which to transmit serial data.
-const byte bleVccPin = A2;        //!< Pin used to power the SunStation's Bluetooth module.
+const byte bleVccPin = A2;        //!< Pin used to power the %SunStation's Bluetooth module.
 const byte lightsDataPin = 3;     //!< Pin used to drive data into lights object.
-const byte lightsPmosPin = 2;     //!< Pin used to toggle P-MOSFET used control SunStation's lights.
-const byte usbRelayPin = 8;       //!< Pin used to toggle relay that controls SunStation's USB port.
-const byte buttonPin = 6;         //!< Pin used to monitor SunStation's button state.
-const byte currentSensorPin = A0; //!< Pin used to measure current of the SunStation's battery.
+const byte lightsPmosPin = 2;     //!< Pin used to toggle P-MOSFET used control %SunStation's lights.
+const byte usbRelayPin = 8;       //!< Pin used to toggle relay that controls %SunStation's USB port.
+const byte buttonPin = 6;         //!< Pin used to monitor %SunStation's button state.
+const byte currentSensorPin = A0; //!< Pin used to measure current of the %SunStation's battery.
 
 const float SunStation::batteryIdleDraw = 0.005083;
 const float SunStation::batteryChargeRate = 0.10;
@@ -42,18 +37,18 @@ const float SunStation::currentMeasurementNoise = 0.20;
 
 /** 
  * SoftwareSerial object used to communicate 
- * with the SunStation's Bluetooth module.
+ * with the %SunStation's Bluetooth module.
  */
 SoftwareSerial BleSerial(virtualRxPin, virtualTxPin);
 
 /** 
  * Adafruit_NeoPixel object used 
- * to control the SunStation's lights.
+ * to control the %SunStation's lights.
  */
 Adafruit_NeoPixel lights(15, lightsDataPin, NEO_GRB + NEO_KHZ800);
 
 /**
- * Initialises the SunStation's hardware and recovers saved data.
+ * Initialises the %SunStation's hardware and recovers saved data.
  */
 void SunStation::begin()
 {
@@ -76,7 +71,7 @@ void SunStation::begin()
   computeCarbonSaved();
 }
 
-/** @return True when the SunStation's button state 
+/** @return True when the %SunStation's button state 
  * changes from unpressed to pressed, false otherwise.
  */
 bool SunStation::isButtonPressed()
@@ -94,33 +89,33 @@ bool SunStation::isButtonPressed()
   return isButtonPressed;
 }
 
-/** Powers on the SunStation USB port. */
+/** Powers on the %SunStation USB port. */
 void SunStation::turnUsbOn()
 {
   digitalWrite(usbRelayPin, HIGH);
 }
 
-/** Powers off the SunStation's USB port. */
+/** Powers off the %SunStation's USB port. */
 void SunStation::turnUsbOff()
 {
   digitalWrite(usbRelayPin, LOW);
 }
 
-/** Powers on the SunStation's Bluetooth module. */
+/** Powers on the %SunStation's Bluetooth module. */
 void SunStation::turnBleOn()
 {
   digitalWrite(bleVccPin, HIGH);
 }
 
-/** Powers off the SunStation's Bluetooth module. */
+/** Powers off the %SunStation's Bluetooth module. */
 void SunStation::turnBleOff()
 {
   digitalWrite(bleVccPin, LOW);
 }
 
 /** 
- * Turns on the SunStation's lights.
- * The number of LEDs turned on depends on the SunStation's battey level.
+ * Turns on the %SunStation's lights.
+ * The number of LEDs turned on depends on the %SunStation's battey level.
  */
 void SunStation::turnLightsOn()
 {
@@ -137,7 +132,7 @@ void SunStation::turnLightsOn()
   lights.show();
 }
 
-/** Turns off the SunStation's lights. */
+/** Turns off the %SunStation's lights. */
 void SunStation::turnLightsOff()
 {
   lights.clear();
@@ -145,30 +140,30 @@ void SunStation::turnLightsOff()
   digitalWrite(lightsPmosPin, HIGH);
 }
 
-/** @return True if the SunStation's USB port is powered on, false otherwise. */
+/** @return True if the %SunStation's USB port is powered on, false otherwise. */
 bool SunStation::isUsbOn() { return mIsUsbOn; }
 
-/** @return The SunStation's last measured battery level in percentage (0-100). */
+/** @return The %SunStation's last measured battery level in percentage (0-100). */
 byte SunStation::getBatteryLevel() { return batteryLevel; };
 
-/** @return The SunStation's last measured raw battery level. */
+/** @return The %SunStation's last measured raw battery level. */
 float SunStation::getRawBatteryLevel() { return rawBatteryLevel; };
 
-/** @return The SunStation battery's last measured current draw/output (amps). */
+/** @return The %SunStation battery's last measured current draw/output (amps). */
 float SunStation::getBatteryCurrent() { return batteryCurrent; }
 
-/** @return Currrent accumulated by the SunStation's battery as of last update. */
+/** @return Currrent accumulated by the %SunStation's battery as of last update. */
 float SunStation::getCumulativeCurrent() { return cumulativeCurrent; }
 
-/** @return Amount of Carbon (kg of CO2) saved by the SunStation in its lifetime. */
+/** @return Amount of Carbon (kg of CO2) saved by the %SunStation in its lifetime. */
 float SunStation::getCarbonSaved() { return carbonSaved; }
 
-/** @return Amount of energy (Wh) produced by the SunStation in its lifetime. */
+/** @return Amount of energy (Wh) produced by the %SunStation in its lifetime. */
 unsigned long SunStation::getEnergyProduced() { return energyProduced; }
 
 /**
  * Measures the amount of current (amps) being drawn/output by the
- * SunStation's battery. The equations used to compute the current
+ * %SunStation's battery. The equations used to compute the current
  * based on readings from the current sensor can be found here:
  * https://www.pololu.com/product/2452 
  */
@@ -188,7 +183,7 @@ void SunStation::measureBatteryCurrent()
   batteryCurrent = abs(current) < currentMeasurementNoise ? 0.0 : current;
 }
 
-/** Updates the current accumulated by the SunStation's battery. */
+/** Updates the current accumulated by the %SunStation's battery. */
 void SunStation::updateCumulativeCurrent()
 {
   if (batteryCurrent > 0)
@@ -197,13 +192,13 @@ void SunStation::updateCumulativeCurrent()
   }
 }
 
-/** Resets the current accumulated by the SunStation's battery. */
+/** Resets the current accumulated by the %SunStation's battery. */
 void SunStation::resetCumulativeCurrent()
 {
   cumulativeCurrent = 0.0;
 }
 
-/** Computes the SunStation's battery levels (percentage and raw) in one call. */
+/** Computes the %SunStation's battery levels (percentage and raw) in one call. */
 void SunStation::computeBatteryLevels()
 {
   computeRawBatteryLevel();
@@ -211,7 +206,7 @@ void SunStation::computeBatteryLevels()
   batteryLevel = rawBatteryLevel * 100 / batteryMaxCapacity;
 }
 
-/** Computes the SunStation battery raw battery level (0-maxCapacity). */
+/** Computes the %SunStation battery raw battery level (0-maxCapacity). */
 void SunStation::computeRawBatteryLevel()
 {
   float rate = batteryCurrent > 0 ? batteryChargeRate : batteryDischargeRate;
@@ -219,7 +214,7 @@ void SunStation::computeRawBatteryLevel()
   rawBatteryLevel = constrain(rawBatteryLevel, 0, batteryMaxCapacity);
 }
 
-/** Computes the SunStation's battery level in percentage (0-100). */
+/** Computes the %SunStation's battery level in percentage (0-100). */
 void SunStation::computeBatteryLevel()
 {
   float trueBatteryLevel = rawBatteryLevel / batteryMaxCapacity * 100;
@@ -236,7 +231,7 @@ void SunStation::computeBatteryLevel()
 }
 
 /**
- * Computes the amount of carbon (kg of CO2) saved by the SunStation in its lifetime.
+ * Computes the amount of carbon (kg of CO2) saved by the %SunStation in its lifetime.
  * Energy to carbon emissions conversion factor from the EPA:
  * 7.09 × 10^-4 metric tons CO2/kWh -> 7.09 × 10^-4  kg CO2/Wh
  * https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references
@@ -248,7 +243,7 @@ void SunStation::computeCarbonSaved()
 }
 
 /**
- * Computes the amount energy produced (Wh) by the SunStation in its lifetime.
+ * Computes the amount energy produced (Wh) by the %SunStation in its lifetime.
  * TODO: need sources for the conversion factor used
  */
 void SunStation::computeEnergyProduced()
@@ -257,13 +252,13 @@ void SunStation::computeEnergyProduced()
   energyProduced = constrain(result, 0, 999999999); // values > 999999999 overflow blePacket
 }
 
-/** Saves the amount of energy produced by the SunStation in non-volatile memory. */
+/** Saves the amount of energy produced by the %SunStation in non-volatile memory. */
 void SunStation::saveEnergyProduced()
 {
   EEPROM.put(0, energyProduced);
 }
 
-/** Retrieves the amount of energy produced by station from non-volatile memory. */
+/** Retrieves the amount of energy produced by the SunStation from non-volatile memory. */
 void SunStation::recoverEnergyProduced()
 {
   EEPROM.get(0, energyProduced);
@@ -271,7 +266,7 @@ void SunStation::recoverEnergyProduced()
 
 template <typename T>
 /**
- * Sends a data packet from the SunStation over Bluetooth.
+ * Sends a data packet from the %SunStation over Bluetooth.
  * @param name A description of the data to be sent
  * @param value The value of the data to be sent.
  */

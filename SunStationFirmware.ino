@@ -1,7 +1,7 @@
 /**
  * @file SunStationFirmware.cpp
  * 
- * This is the main program for the SunStation solar phone charger. 
+ * This is the program that controls the %SunStation. 
  */
 
 #include "SunStation.h"

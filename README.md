@@ -13,3 +13,4 @@ Check out the ```SunStation``` and ```SunStation.cpp``` file references of the D
 
 Written by Loïc Darboux with guidance from Chris Falconi and Ibrahim Hashim.
  
+![Animation of the SunStation in use](https://github.com/loicdrbx/SunStationFirmware/blob/master/docs/animation.gif)

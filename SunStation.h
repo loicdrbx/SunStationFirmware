@@ -2,14 +2,16 @@
  * @file SunStation.h
  *
  * Helper class that stores the state and 
- * functions used to interact with the SunStation.
+ * functions used to interact with the %SunStation.
  */
 #ifndef SunStation_h
 #define SunStation_h
 
 #include "Arduino.h"
 
-/** Interface for SunStation helper class */
+/** Helper class that stores the state and 
+ * functions used to interact with the %SunStation
+ */
 class SunStation
 {
 public:
