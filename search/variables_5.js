@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['usbrelaypin_0',['usbRelayPin',['../_sun_station_8cpp.html#ae2c4ad60421df343b5bd039c7460b3be',1,'SunStation.cpp']]]
+  ['rawbatterylevel_0',['rawBatteryLevel',['../class_sun_station.html#a471f0f90ec9b02b3429508c199799be6',1,'SunStation']]]
 ];

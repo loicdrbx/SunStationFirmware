@@ -25,15 +25,13 @@
 var NAVTREE =
 [
   [ "SunStation Firmware", "index.html", [
-    [ "Introduction", "index.html#intro_sec", null ],
-    [ "Dependencies", "index.html#dependencies", null ],
-    [ "Author", "index.html#author", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [

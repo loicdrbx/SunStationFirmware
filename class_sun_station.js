@@ -23,5 +23,19 @@ var class_sun_station =
     [ "computeEnergyProduced", "class_sun_station.html#a45dd8915e6fe5a73a46cf2ce4e12017c", null ],
     [ "saveEnergyProduced", "class_sun_station.html#a4733d11603439390512e3d0fab1cbdb2", null ],
     [ "recoverEnergyProduced", "class_sun_station.html#a7d3120b3d6790e72657cec74c48ffe38", null ],
-    [ "sendBlePacket", "class_sun_station.html#aed61622311880b87bd1cb93f30696f2d", null ]
+    [ "sendBlePacket", "class_sun_station.html#aed61622311880b87bd1cb93f30696f2d", null ],
+    [ "computeRawBatteryLevel", "class_sun_station.html#aa236c8c96ef12fac8c40abd754f96347", null ],
+    [ "computeBatteryLevel", "class_sun_station.html#a2b7f0bfbd6d689193bb47f11cb2cf19e", null ],
+    [ "mIsUsbOn", "class_sun_station.html#a973470a69071ab4529a078d25b64ff8c", null ],
+    [ "batteryLevel", "class_sun_station.html#a1ad9ebdd4a8577bbef383e3e93395be7", null ],
+    [ "rawBatteryLevel", "class_sun_station.html#a471f0f90ec9b02b3429508c199799be6", null ],
+    [ "batteryCurrent", "class_sun_station.html#a0b480e36d00e2574484c45717571d1e1", null ],
+    [ "cumulativeCurrent", "class_sun_station.html#a9035d8b37ac6af7b4e186e250fe2adf1", null ],
+    [ "carbonSaved", "class_sun_station.html#a2124587d54be4090e6fc0d3b39d4b238", null ],
+    [ "energyProduced", "class_sun_station.html#aed93ab0d03fecf3507c489d9443016a3", null ],
+    [ "batteryIdleDraw", "class_sun_station.html#a857313f11bab5b887c2f7c0771465767", null ],
+    [ "batteryChargeRate", "class_sun_station.html#acaa4ba8b6f8580f5618d73ff95851d4e", null ],
+    [ "batteryDischargeRate", "class_sun_station.html#a14689f516bdc130a2403bbbf7c456579", null ],
+    [ "batteryMaxCapacity", "class_sun_station.html#a09b90d7e573dd47e1459c4e6c59ca0ae", null ],
+    [ "currentMeasurementNoise", "class_sun_station.html#ab7acab5e673eacdc6f738a6731cc5d61", null ]
 ];

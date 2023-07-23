@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['lights_0',['lights',['../_sun_station_8cpp.html#abefb3fdc7115b13e3eb6a3a26dff67de',1,'SunStation.cpp']]],
-  ['lightsdatapin_1',['lightsDataPin',['../_sun_station_8cpp.html#ac3cc8e88f5eecb141947a78a6633f92d',1,'SunStation.cpp']]],
-  ['lightspmospin_2',['lightsPmosPin',['../_sun_station_8cpp.html#aaf944a2052b49599caa7c8aa4290906f',1,'SunStation.cpp']]],
-  ['loop_3',['loop',['../_sun_station_firmware_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'SunStationFirmware.ino']]]
+  ['getbatterycurrent_0',['getBatteryCurrent',['../class_sun_station.html#a3accc1a48b50720fca60435f8a3312eb',1,'SunStation']]],
+  ['getbatterylevel_1',['getBatteryLevel',['../class_sun_station.html#ab967131d2495d98ca7d6f08c6584c14c',1,'SunStation']]],
+  ['getcarbonsaved_2',['getCarbonSaved',['../class_sun_station.html#aabd38d610fda0f9d36ba00298d475f10',1,'SunStation']]],
+  ['getcumulativecurrent_3',['getCumulativeCurrent',['../class_sun_station.html#a82a5f4d0424c1c40f172857c4a709915',1,'SunStation']]],
+  ['getenergyproduced_4',['getEnergyProduced',['../class_sun_station.html#a9d9aff25f1db02f7eaff21544e7554a5',1,'SunStation']]],
+  ['getrawbatterylevel_5',['getRawBatteryLevel',['../class_sun_station.html#a32c7210b13731e8887e3bd81a46bdbb8',1,'SunStation']]]
 ];

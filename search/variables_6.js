@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['virtualrxpin_0',['virtualRxPin',['../_sun_station_8cpp.html#a194cb2744e5fefa6bfe05f771383d092',1,'SunStation.cpp']]],
-  ['virtualtxpin_1',['virtualTxPin',['../_sun_station_8cpp.html#ada6ab3906d53ede7f23fe968e18b782a',1,'SunStation.cpp']]]
+  ['station_0',['station',['../_sun_station_firmware_8ino.html#a251b1fca1f1eea3bbcf1b5f0a28cede9',1,'SunStationFirmware.ino']]]
 ];

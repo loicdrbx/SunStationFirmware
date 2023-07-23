@@ -1,5 +1,12 @@
 var searchData=
 [
-  ['virtualrxpin_0',['virtualRxPin',['../_sun_station_8cpp.html#a194cb2744e5fefa6bfe05f771383d092',1,'SunStation.cpp']]],
-  ['virtualtxpin_1',['virtualTxPin',['../_sun_station_8cpp.html#ada6ab3906d53ede7f23fe968e18b782a',1,'SunStation.cpp']]]
+  ['timer_0',['timer',['../_sun_station_firmware_8ino.html#a92875cff9fe9b5d9b5c33b05bdc0ca83',1,'SunStationFirmware.ino']]],
+  ['toggleble_1',['toggleBle',['../_sun_station_firmware_8ino.html#a5a4cc4ed0831e1b5639baf5888b37370',1,'SunStationFirmware.ino']]],
+  ['togglelights_2',['toggleLights',['../_sun_station_firmware_8ino.html#a39f30a8a307805ee1454f27ff68246a1',1,'SunStationFirmware.ino']]],
+  ['turnbleoff_3',['turnBleOff',['../class_sun_station.html#a0302ca5bb8e900cdf4807f50a6eb8c86',1,'SunStation::turnBleOff()'],['../_sun_station_firmware_8ino.html#acb89a684bd48ebc5bca4acc67a8940c3',1,'turnBleOff():&#160;SunStationFirmware.ino']]],
+  ['turnbleon_4',['turnBleOn',['../class_sun_station.html#acf39da7ed06997ea3bb146ee26db17d9',1,'SunStation']]],
+  ['turnlightsoff_5',['turnLightsOff',['../class_sun_station.html#a67aad52c87f1f809ad14aef120e1095e',1,'SunStation::turnLightsOff()'],['../_sun_station_firmware_8ino.html#a9250ed76616c4c0e1d492076235fcb3d',1,'turnLightsOff():&#160;SunStationFirmware.ino']]],
+  ['turnlightson_6',['turnLightsOn',['../class_sun_station.html#a88e8e47b45920ef680e26a61eecf5d35',1,'SunStation']]],
+  ['turnusboff_7',['turnUsbOff',['../class_sun_station.html#aa06aab3546eb6dc7b3a3fcaec7b1d820',1,'SunStation']]],
+  ['turnusbon_8',['turnUsbOn',['../class_sun_station.html#a69c930cd522a35c89b9086c937b981ae',1,'SunStation']]]
 ];
